@@ -6,6 +6,18 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+    The Function accepts files in JSON format, reads song details and artist details; 
+    finally inserts records to songs and artists tables.
+
+    Args:
+    cur: Database cursor.
+    filepath: JSON file's location.
+
+    Returns:
+    None
+
+    """
     # open song file
     df = pd.read_json(filepath, lines=True)
 
@@ -21,6 +33,18 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """
+    The Function accepts files in JSON format, reads music streaming app activity logs details; 
+    finally inserts records to songplay tables.
+
+    Args:
+    cur: Database cursor.
+    filepath: JSON file's location.
+
+    Returns:
+    None
+
+    """
     # open log file
     df = pd.read_json(filepath, lines=True)
 
@@ -61,13 +85,30 @@ def process_log_file(cur, filepath):
             songid, artistid = None, None
         
         # insert songplay record
-        songplay_data = (row.ts, row.userId, row.level, songid, artistid, row.sessionId, row.location, row.userAgent)
+        songplay_data = (int(row.ts//1000), row.userId, row.level, songid, artistid, row.sessionId, row.location, row.userAgent)
         cur.execute(songplay_table_insert, songplay_data)
 
         
 
 
 def process_data(cur, conn, filepath, func):
+    """
+    The general function accepts files in JSON format, reads given data,
+    finally inserts records to given tables
+    
+    reads music streaming app activity logs details; 
+    finally inserts records to songplay tables.
+
+    Args:
+    cur: Database cursor.
+    conn: Database connection instance 
+    filepath: JSON file's location.
+    func: process file function instance 
+
+    Returns:
+    None
+    
+    """
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
