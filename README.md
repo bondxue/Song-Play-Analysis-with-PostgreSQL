@@ -1,4 +1,5 @@
 # Project 1: Song Play Analysis with RDBMS
+[![Project passed](https://img.shields.io/badge/project-passed-success.svg)](https://img.shields.io/badge/project-passed-success.svg)
 
 ## Summary
 * [Purpose of database](#purpose-database)
