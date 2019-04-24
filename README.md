@@ -23,21 +23,28 @@ Following tables are included:
 #### Fact Table 
 1. **songplays** - records in log data associated with song plays i.e. records with page `NextSong` 
     + *songplay_id (PK), start_time (FK), user_id (FK), level, song_id (FK), artist_id (FK), session_id, location, user_agent*
-    ![songplay table](images/songplay_table.PNG)
+    
+![songplay table](images/songplay_table.PNG)
 
 #### Dimension Tables 
 2. **users** - users in the app 
     + *user_id (PK), first_name, last_name, gender, level*
-    ![songplay table](images/users_table.PNG)
+    
+![songplay table](images/users_table.PNG)
 3. **songs** - songs in music database
     + *song_id (PK), title, artist_id, year, duration*
-    ![songplay table](images/songs_table.PNG)
+    
+![songplay table](images/songs_table.PNG)
+
 4. **artists** - artists in music database
     + *artist_id (PK), name, location, lattitude, longitude*
-    ![songplay table](images/artists_table.PNG)
+    
+![songplay table](images/artists_table.PNG)
+
 5. **time** - timestamps of records in **songplays** broken down into specific units
     + *start_time (PK), hour, day, week, month, year, weekday*
-    ![songplay table](images/time_table.PNG)
+    
+![songplay table](images/time_table.PNG)
 
 --------------------------------------------
 ### Project Structure 
