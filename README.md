@@ -17,29 +17,32 @@ This Postgres database is to help Sparkify to optimize queries on song play anal
 ### Databaase schema
 Using the song and log datasets, a `star schema` is created for queries on song play analysis. 
 
-![schema](images/schema.PNG)
+   <img src="https://github.com/bondxue/Song-Play-Analysis-with-PostgreSQL/blob/master/images/schema.PNG" width="700">
 
 Following tables are included:
 #### Fact Table 
 1. **songplays** - records in log data associated with song plays i.e. records with page `NextSong` 
     + *songplay_id (PK), start_time (FK), user_id (FK), level, song_id (FK), artist_id (FK), session_id, location, user_agent*
-    ![songplay table](images/songplay_table.PNG)
+    <img src="https://github.com/bondxue/Song-Play-Analysis-with-PostgreSQL/blob/master/images/songplay_table.PNG" width="700">
+
 
 #### Dimension Tables 
 2. **users** - users in the app 
     + *user_id (PK), first_name, last_name, gender, level*
-    ![songplay table](images/users_table.PNG)
+    <img src="https://github.com/bondxue/Song-Play-Analysis-with-PostgreSQL/blob/master/images/users_table.PNG" width="300">
+
 3. **songs** - songs in music database
     + *song_id (PK), title, artist_id, year, duration*
-    ![songplay table](images/songs_table.PNG)
+    <img src="https://github.com/bondxue/Song-Play-Analysis-with-PostgreSQL/blob/master/images/songs_table.PNG" width="600">
+
 
 4. **artists** - artists in music database
     + *artist_id (PK), name, location, lattitude, longitude*
-    ![songplay table](images/artists_table.PNG)
+    <img src="https://github.com/bondxue/Song-Play-Analysis-with-PostgreSQL/blob/master/images/artists_table.PNG" width="900">
 
 5. **time** - timestamps of records in **songplays** broken down into specific units
     + *start_time (PK), hour, day, week, month, year, weekday*
-    ![songplay table](images/time_table.PNG)
+    <img src="https://github.com/bondxue/Song-Play-Analysis-with-PostgreSQL/blob/master/images/time_table.PNG" width="300">
 
 --------------------------------------------
 ### Project Structure 
