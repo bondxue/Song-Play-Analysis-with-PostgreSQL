@@ -1,4 +1,5 @@
 # Project 1: Song Play Analysis with RDBMS
+[![Project passed](https://img.shields.io/badge/project-passed-success.svg)](https://img.shields.io/badge/project-passed-success.svg)
 
 ## Summary
 * [Purpose of database](#purpose-database)
@@ -31,9 +32,11 @@ Following tables are included:
 3. **songs** - songs in music database
     + *song_id (PK), title, artist_id, year, duration*
     ![songplay table](images/songs_table.PNG)
+
 4. **artists** - artists in music database
     + *artist_id (PK), name, location, lattitude, longitude*
     ![songplay table](images/artists_table.PNG)
+
 5. **time** - timestamps of records in **songplays** broken down into specific units
     + *start_time (PK), hour, day, week, month, year, weekday*
     ![songplay table](images/time_table.PNG)
